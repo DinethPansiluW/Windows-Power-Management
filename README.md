@@ -68,8 +68,8 @@ npm run dev
 npm run dist
 ```
 This runs `electron-builder` and generates both targets in the `/release` folder:
-1. **NSIS Installer**: `release/PowerSettingManager-1.8.2-nsis.exe` (with custom install directory support and administrator elevation).
-2. **Portable Executable**: `release/PowerSettingManager-1.8.2-portable.exe` (zero installation required, runs standalone with administrator elevation).
+1. **NSIS Installer**: `release/PowerSettingManager-1.8.2-Setup.exe` (with custom install directory support and administrator elevation).
+2. **Portable Executable**: `release/PowerSettingManager-1.8.2-Portable.exe` (zero installation required, runs standalone with administrator elevation).
 
 ---
 

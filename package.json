@@ -34,7 +34,6 @@
         "portable"
       ],
       "icon": "build/icon.ico",
-      "artifactName": "PowerSettingManager-${version}-${target}.${ext}",
       "requestedExecutionLevel": "requireAdministrator"
     },
     "extraResources": [
@@ -48,7 +47,11 @@
       "allowToChangeInstallationDirectory": true,
       "installerIcon": "build/icon.ico",
       "uninstallerIcon": "build/icon.ico",
-      "installerHeaderIcon": "build/icon.ico"
+      "installerHeaderIcon": "build/icon.ico",
+      "artifactName": "PowerSettingManager-${version}-Setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "PowerSettingManager-${version}-Portable.${ext}"
     }
   },
   "devDependencies": {
