@@ -1,7 +1,7 @@
 {
   "name": "power-setting-manager",
   "productName": "Power Setting Manager",
-  "version": "1.0.0",
+  "version": "1.8.2",
   "description": "Windows 11 Fluent power settings manager with auto-restore and custom presets",
   "author": "Dineth Pansilu",
   "main": "main.js",
@@ -10,7 +10,7 @@
     "check": "node --check main.js && node --check preload.js && node --check lib/powercfg.js && node --check lib/storage.js && node --check lib/restoreTask.js && node --check lib/planSwitchTask.js && node --check renderer/app.js && node --check scripts/check-icon.js && node --check scripts/ensure-wincodesign.js",
     "check:build": "node scripts/check-icon.js && node scripts/ensure-wincodesign.js",
     "predist": "npm run check && npm run check:build",
-    "dist": "electron-builder",
+    "dist": "electron-builder --win",
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build"
   },

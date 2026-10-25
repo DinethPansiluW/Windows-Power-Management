@@ -67,9 +67,9 @@ npm run dev
 ```bash
 npm run dist
 ```
-This runs `electron-builder` and generates both targets in the `/dist` folder:
-1. **NSIS Installer**: `dist/Power Setting Manager Setup 1.0.0.exe` (with custom install directory support and administrator elevation).
-2. **Portable Executable**: `dist/Power Setting Manager 1.0.0.exe` (zero installation required, runs standalone with administrator elevation).
+This runs `electron-builder` and generates both targets in the `/release` folder:
+1. **NSIS Installer**: `release/PowerSettingManager-1.8.2-nsis.exe` (with custom install directory support and administrator elevation).
+2. **Portable Executable**: `release/PowerSettingManager-1.8.2-portable.exe` (zero installation required, runs standalone with administrator elevation).
 
 ---
 

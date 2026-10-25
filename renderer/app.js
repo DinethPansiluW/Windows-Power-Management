@@ -2303,7 +2303,7 @@
           <div style="display: flex; align-items: center; gap: 10px;">
             <img src="${isElectron ? './icon.png' : '/icon.png'}" width="34" height="34" style="border-radius: 8px; flex-shrink: 0;" alt="App Icon">
             <div>
-              <div style="font-weight: 600; font-size: 13px; color: var(--text-primary);">Power Setting Manager v1.0.0</div>
+              <div style="font-weight: 600; font-size: 13px; color: var(--text-primary);">Power Setting Manager v1.8.2</div>
               <div style="font-size: 11.5px; color: var(--text-secondary);">By Dineth Pansilu (@DinethPansiluW)</div>
             </div>
           </div>
@@ -2401,7 +2401,7 @@
           <div class="about-hero-details">
             <div class="about-app-name">
               <span>Power Setting Manager</span>
-              <span class="about-version-badge">v1.0.0</span>
+              <span class="about-version-badge">v1.8.2</span>
             </div>
             <div class="about-app-desc">
               Official Windows desktop edition crafted by <strong>Dineth Pansilu</strong>. Powered by native <code>powercfg</code> and Windows Task Scheduler. Operates with instant Never mode, 8-timeout plan tuning with min/h unit switching, Kernel-Power EventID 105 power-source auto-switching, and reboot auto-restore.
