@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power Setting Manager</title>
+  <meta name="description" content="Windows 11 Fluent power settings manager GUI with auto-restore after restart and custom presets" />
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="stylesheet" href="/renderer/styles.css" />
+</head>
+<body>
+  <!-- Windows 11 Fluent 2 Unified Title Bar (40px) -->
+  <header class="titlebar">
+    <div class="titlebar-brand">
+      <img src="/icon.png" width="20" height="20" style="border-radius: 4px; object-fit: cover;" alt="App Icon" />
+      <span>Power Setting Manager</span>
+      <span id="device-type-chip" class="device-chip">System</span>
+    </div>
+    <div class="titlebar-controls">
+      <button id="btn-settings-gear" class="titlebar-btn" title="Settings" aria-label="Settings">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+      <button id="btn-minimize" class="titlebar-btn" title="Minimize" aria-label="Minimize">
+        <svg width="10" height="10" viewBox="0 0 10 10">
+          <line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.2"></line>
+        </svg>
+      </button>
+      <button id="btn-maximize" class="titlebar-btn" title="Maximize" aria-label="Maximize">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <rect x="0.5" y="0.5" width="9" height="9" stroke="currentColor" stroke-width="1.2"></rect>
+        </svg>
+      </button>
+      <button id="btn-close" class="titlebar-btn close" title="Close" aria-label="Close">
+        <svg width="10" height="10" viewBox="0 0 10 10">
+          <line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.2"></line>
+          <line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.2"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Centered Pill-Shaped Segmented Tab Bar (4 Tabs) -->
+  <div class="top-tabbar-container">
+    <nav class="top-tabbar">
+      <button class="tab-pill active" data-tab="dashboard">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>Dashboard</span>
+      </button>
+      <button class="tab-pill" data-tab="presets">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Presets</span>
+      </button>
+      <button class="tab-pill" data-tab="plans">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+        <span>Power Plans</span>
+      </button>
+      <button class="tab-pill" data-tab="buttons">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span>Buttons &amp; Lid Manager</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Main View Area (Centered in Max-Width Container) -->
+  <main class="app-viewport">
+    <div id="app-content" class="app-content-container">
+      <!-- Injected dynamically by app.js -->
+    </div>
+  </main>
+
+  <script src="/renderer/app.js"></script>
+</body>
+</html>

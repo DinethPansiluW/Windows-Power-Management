@@ -1,0 +1,6 @@
+{
+  "name": "Power Setting Manager",
+  "description": "Modern Windows 11 Fluent power settings manager GUI with auto-restore after restart and custom presets",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "power-setting-manager",
+  "productName": "Power Setting Manager",
+  "version": "1.0.0",
+  "description": "Windows 11 Fluent power settings manager with auto-restore and custom presets",
+  "author": "Dineth Pansilu",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "check": "node --check main.js && node --check preload.js && node --check lib/powercfg.js && node --check lib/storage.js && node --check lib/restoreTask.js && node --check lib/planSwitchTask.js && node --check renderer/app.js && node --check scripts/check-icon.js && node --check scripts/ensure-wincodesign.js",
+    "check:build": "node scripts/check-icon.js && node scripts/ensure-wincodesign.js",
+    "predist": "npm run check && npm run check:build",
+    "dist": "electron-builder",
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "vite build"
+  },
+  "build": {
+    "appId": "com.psm.powersettingmanager",
+    "productName": "Power Setting Manager",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "lib/**",
+      "renderer/**",
+      "assets/**",
+      "build/**"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "PowerSettingManager-${version}-${target}.${ext}",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "extraResources": [
+      {
+        "from": "assets/BackupPowerPlan.pow",
+        "to": "BackupPowerPlan.pow"
+      }
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "vite": "^8.3.0"
+  }
+}
